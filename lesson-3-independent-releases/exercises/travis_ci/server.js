@@ -4,7 +4,7 @@ function sleep(ms) {
 
 async function main() {
   while(true) {
-    console.log('Lawizy Containers rule!');
+    console.log('Laweezy Containers rule!');
     await sleep(5000);
   }
 }

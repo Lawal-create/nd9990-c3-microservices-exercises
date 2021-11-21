@@ -102,7 +102,7 @@ router.post('/', async (req: Request, res: Response) => {
   const newUser = await new User({
     email: email,
     passwordHash: generatedHash,
-  });
+  }as User);
 
   const savedUser = await newUser.save();
 

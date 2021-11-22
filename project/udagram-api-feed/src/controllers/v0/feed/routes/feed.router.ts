@@ -58,8 +58,8 @@ router.get('/signed-url/:fileName',
 router.post('/',
     requireAuth,
     async (req: Request, res: Response) => {
-      const caption = req.body.caption as string;
-      const fileName = req.body.url as string; // same as S3 key name
+      const caption = req.body.caption;
+      const fileName = req.body.url; // same as S3 key name
 
       if (!caption) {
         return res.status(400).send({message: 'Caption is required or malformed.'});
@@ -72,7 +72,7 @@ router.post('/',
       const item = await new FeedItem({
         caption: caption,
         url: fileName,
-      } as FeedItem);
+      });
 
       const savedItem = await item.save();
 
